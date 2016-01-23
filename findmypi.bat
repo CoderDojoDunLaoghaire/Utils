@@ -26,7 +26,7 @@ if not %mac% == * (
 	if "%ip%" neq "" echo found your Pi at address %ip% && goto end
 	) ELSE (
 	rem just look for a potential IP address on the same network
- 	findstr /m "Received = 1" test.txt >nul
+ 	findstr /m "ttl=64" test.txt >nul
 rem	echo error level is %errorlevel% 
 	if %errorlevel%==0 echo found a potential match at address %prefix%.%n%
 )
